@@ -1,15 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import AnimatedScroll from './components/AnimatedScroll';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
+import {StyleSheet, Dimensions} from 'react-native';
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -30,11 +21,13 @@ const App = () => {
       })
       .finally(() => setisLoading(false));
   };
-  console.log(data);
+  console.log('get list data url data :',data);
 
-  return (<AnimatedScroll data={data} isLoading={isLoading}></AnimatedScroll>);
+  return <AnimatedScroll data={data} isLoading={isLoading}></AnimatedScroll>;
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  
+});
 
 export default App;
